@@ -1,0 +1,85 @@
+.converter {
+  border: 1px solid #ccc;
+  padding: 25px 50px;
+  background-color: #f8f7f7f7;
+  border-radius: 5px;
+}
+
+.converter h2 {
+  color: #333;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url('http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png') white no-repeat 96% !important;
+  cursor: pointer;
+}
+
+.custom-select {
+  height: calc(3em + 0.75rem + 2px);
+  text-align-last: center;
+  font-size: 20px;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.form-control {
+  height: calc(3em + 0.75rem + 2px);
+  font-size: 20px;
+  overflow: hidden;
+  font-weight: bold;
+  cursor: pointer;
+  text-align-last: center;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group img {
+  position: absolute;
+  left: 5%;
+  top: 25%;
+}
+
+label {
+  display: inline-block;
+  width: 100%;
+  padding: 0 5px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.col-1 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2px !important;
+}
+
+.col-1 .form-group {
+  margin-top: auto;
+}
+
+.col-1 .form-group button img {
+  position: relative;
+  width: 100%;
+}
+
+.col-12 .result {
+  border: 3px solid #ccc;
+  height: 150px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-12 .result p {
+  color: #fff;
+  font-size: 20px;
+}
