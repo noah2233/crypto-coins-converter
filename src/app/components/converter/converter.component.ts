@@ -61,45 +61,24 @@ export class ConverterComponent implements OnInit {
   }
 
   initCryptoCoins() {
-    this.coinsService.getAssetsIcons().subscribe(
-      (coins: Currency[]) => {
-        this.cryptoCoins = coins;
-        this.converterForm.controls.to.setValue(this.cryptoCoins.find((curr) => curr.asset_id === 'BTC'));
-      },
-      (error) => {
-        if (error.status === 429) {
-          alert('Too many requests, try again later');
-        }
-      }
-    );
+    this.coinsService.getAssetsIcons().subscribe((coins: Currency[]) => {
+      this.cryptoCoins = coins;
+      this.converterForm.controls.to.setValue(this.cryptoCoins.find((curr) => curr.asset_id === 'BTC'));
+    });
   }
 
   convertValueCoins() {
-    this.coinsService.getExchange(this.fromCoin, this.toCoin).subscribe(
-      (data: any) => {
-        this.result = `${this.amountVal} (${this.fromCoin} = ${data.rate * this.amountVal} ${this.toCoin}`;
-        console.log(this.toCoin);
-      },
-      (error) => {
-        if (error.status === 429) {
-          alert('Too many requests, try again later');
-        }
-      }
-    );
+    this.coinsService.getExchange(this.fromCoin, this.toCoin).subscribe((data: any) => {
+      this.result = `${this.amountVal} (${this.fromCoin} = ${data.rate * this.amountVal} ${this.toCoin}`;
+      console.log(this.toCoin);
+    });
   }
   // 1 Bitcoin (BTC) = 18,069.51 United States Dollar "$" (USD)
 
   getCoins() {
-    this.coinsService.getAssets().subscribe(
-      (data) => {
-        console.log(data);
-      },
-      (error) => {
-        if (error.status === 429) {
-          alert('Too many requests, try again later');
-        }
-      }
-    );
+    this.coinsService.getAssets().subscribe((data) => {
+      console.log(data);
+    });
   }
 
   swapValueCoins() {
