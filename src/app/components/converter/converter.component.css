@@ -84,3 +84,8 @@ label {
   color: #fff;
   font-size: 20px;
 }
+
+.switch {
+  padding: 0;
+  flex: 1;
+}
