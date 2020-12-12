@@ -36,6 +36,7 @@ select {
 
 .form-group {
   position: relative;
+  margin: 0;
 }
 
 .form-group img {
@@ -69,7 +70,6 @@ label {
 }
 
 .col-12 .result {
-  border: 3px solid #ccc;
   height: 150px;
   width: 100%;
   margin: 0 auto;
@@ -77,6 +77,7 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 15px;
 }
 
 .col-12 .result p {

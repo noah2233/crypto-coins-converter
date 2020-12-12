@@ -4,27 +4,15 @@
   <form [formGroup]="converterForm">
     <div class="row">
       <div class="col-3">
-        <label for="amount">Amount</label>
         <div class="form-group">
-          <input
-            id="amount"
-            name="amount"
-            class="form-control"
-            formControlName="amount"
-            pattern="^[0-9]{0,9}$"
-            data-toggle="tooltip"
-            data-placement="top"
-            (keyup)="onKey($event)"
-            title="Numbers only"
-            [ngClass]="{
+          <input id="amount" name="amount" class="form-control" formControlName="amount" pattern="^[0-9]{0,9}$"
+            data-toggle="tooltip" data-placement="top" (keyup)="onKey($event)" title="Numbers only" [ngClass]="{
               'is-invalid': converterForm.controls.amount.dirty && converterForm.controls.amount.errors
-            }"
-          />
+            }" />
         </div>
       </div>
 
       <div class="col-4">
-        <label for="from">From</label>
         <div class="form-group">
           <select id="from" name="from" formControlName="from" class="custom-select" (change)="onChangeFrom($event)">
             <option *ngFor="let currency of currencies" [ngValue]="currency">{{ currency }}</option>
@@ -34,15 +22,16 @@
       </div>
 
       <div class="col-1">
-        <div class="form-group">
-          <button class="btn btn-primary" (click)="swapValueCoins()">
-            <img src="../../../assets/images/exchange.png" alt="exchange" />
-          </button>
-        </div>
+        <button class="btn" (click)="swapValueCoins()">
+          <svg aria-hidden="true" data-id="icon-exchange" viewBox="0 0 50 47" height="32px" width="30px">
+            <path fill="currentColor" fill-rule="evenodd"
+              d="M49.897 35.977L26.597 25v7.874H7.144v6.207h19.455v7.874zM.103 11.642l23.3 10.977v-7.874h19.454V8.538H23.402V.664z">
+            </path>
+          </svg>
+        </button>
       </div>
 
       <div class="col-4">
-        <label for="to">To</label>
         <div class="form-group">
           <select id="to" name="to" formControlName="to" class="custom-select" (change)="onChangeTo($event)">
             <option *ngFor="let cryptoCoin of cryptoCoins" [ngValue]="cryptoCoin">
